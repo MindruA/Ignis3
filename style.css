@@ -1,0 +1,328 @@
+/* Resetare */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: black;
+}
+
+/* Stilizarea header-ului */
+header {
+    width: 100%;
+    background-color: black;
+    padding: 10px 0;
+    overflow:hidden;
+}
+
+/* Container pentru logo, burger menu și butoane */
+nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+.no-scroll {
+    overflow: hidden;
+}
+/* Stilizarea meniului burger */
+.burger-menu .hamburger {
+    margin-left: 10px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* Stilizarea logo-ului */
+.logo img {
+    max-width: 150px;
+    height: auto;
+    
+}
+/* Stilizarea butoanelor din dreapta (coș și căutare) */
+
+.right-menu button {
+    font-size: 1.5rem;
+    color: white;
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Meniu glisant lateral */
+.side-menu {
+    height: 100%; /* Acoperă întreaga pagină */
+    width: 0; /* Inițial ascuns */
+    position:fixed;
+    top: 0;
+    left: -20px;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+    padding-left: 20px;
+    z-index: 10000;
+}
+
+/* Butoane din meniul glisant */
+.side-menu button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.side-menu button:hover {
+    background-color: #ccc;
+}
+
+
+
+
+.right-menu img {
+    width: 30px; /* Setează dimensiunea imaginilor */
+    height: auto;
+}
+
+/* Stilizarea meniului burger */
+.burger-menu .hamburger {
+    margin-left: 10px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+.close-btn {
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+/* Stilizarea butoanelor din dreapta (coș și căutare) */
+.right-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right-menu button {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-menu img {
+    width: 30px; /* Setează dimensiunea imaginilor */
+    height: auto;
+}
+.poza{
+    transition: filter 0.5s ease-out; /* Tranziție pentru efectul de blurare */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.poza.blur {
+    filter: blur(5px); /* Ajustează valoarea blur-ului după preferințe */
+}
+.moto{
+    display: flex;
+   justify-content: center;
+    color: white;
+    font-family: "Playwrite CU", cursive;
+    text-align: center;
+}
+
+
+.moto h1.visible {
+    opacity: 1; /* Devine vizibil */
+   animation: backInLeft;
+   animation-duration: 2.5s;
+}
+.brichete {
+    display: grid;
+    gap: 100px;
+    padding: 20px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1200px; /* Ajustează lățimea maximă după preferințe */
+    margin: 0 auto; /* Centrează containerul */
+}
+
+.brix {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.brix img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.brix p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #333;
+    margin: 15px 0;
+    padding: 0 15px;
+}
+
+.brix button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.brix button:hover {
+    background-color: #555;
+}
+
+.brix::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.brix:hover::before {
+    opacity: 1;
+}
+
+.brix:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.brix:hover img {
+    opacity: 0.8;
+}
+
+
+.brix {
+    opacity: 0; /* Ascuns inițial */
+    transform: translateY(20px); /* Poziționare inițială în afara câmpului vizual */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Tranziții pentru animație */
+}
+
+/* Stilizare pentru brix când devine vizibil */
+.brix.visible {
+    opacity: 1; /* Vizibil */
+    transform: translateY(0); /* Poziționare normală */
+}
+
+
+
+
+
+/* Responsivitate pentru ecrane mici */
+@media (min-width: 800px) {
+   
+    .logo img {
+        max-width: 120px;
+        margin-left: 60px;
+    }
+    .poza img{
+        max-width: 100%;
+      height: 90vw;
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    }
+    .brichete {
+        grid-template-columns: repeat(3, 1fr); /* 3 pe rând pe ecrane mari */
+    
+    }
+}
+@media (max-width: 800px) {
+   
+    .logo img {
+        max-width: 120px;
+        margin-left: 60px;
+    }
+    .poza img{
+        max-width: 100%;
+      height: 90vw;
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    }
+   .moto h1{
+ 
+    font-size: 5vw;
+   }
+    /* Ajustăm dimensiunea imaginilor pentru ecrane mici */
+    .right-menu img {
+        width: 30px; /* Dimensiune mai mică pentru imagini pe mobile */
+    }
+    .brichete{
+        padding: 50px;
+    }
+   
+
+}
+
+
+
+@media (min-width: 1200px) {
+    .poza img{
+        max-width: 100%;
+      height: 45vw;
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+    }
+  
+    .moto h1{
+        font-size: 2vw;
+       }
+    nav.container{
+        max-width: 170vh;
+    }
+    .brichete {
+        grid-template-columns: repeat(3, 1fr); /* 3 pe rând pe ecrane mari */
+        grid: 120px;
+    }
+    
+
+}
+
+
+
+
+
+
+
